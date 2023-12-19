@@ -1,0 +1,37 @@
+
+<%-include('header')-%>
+    
+    <div class="text-center center-div" id="login">
+        <div class="container w-25 border-20%">
+            <div class="title pb-5" id="form">
+                <h2 class="font-weight-bold pt-5">Admin login</h2>
+                <!-- <span>login for the existing user</span> -->
+                <div >
+                    <form action="/admin/adminlogin" method="post" class="pt-3">
+                        <div class="form-group">
+                            <input type="text" class="form-control mt-3 pt-3" placeholder="username" name="username" required>
+                            <%if(locals.unerror){%>
+                                <div class="alter alert-success text-center">
+                                <%= unerror %>
+                                </div>
+                                <%}%>
+                            
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control mt-3 pt-3" placeholder="password" name="password" required>
+                            <%if(locals.perror){%>
+                                <div class="alter alert-success text-center">
+                                <%= perror %>
+                                </div>
+                                <%}%>
+                        </div>
+                        <button type="submit" class="btn rounded-pill m-3">login</button>
+                    
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<%-include('footer')-%>
+<%-include('footer')-%>

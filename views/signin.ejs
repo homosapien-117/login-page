@@ -1,0 +1,57 @@
+
+<%-include('header')-%>
+<body>
+<div class="text-center center-div" id="login">
+    <div class="container w-25 border-radius20%">
+        <div class="title pb-5" id="form">
+            <h2 class="font-weight-bold pt-3">SignUp</h2>
+            <%if(locals.logout){%>
+                <div class="alter alert-success text-center">
+                    Logout successfull
+                </div>
+                <%}%>
+            <div>
+                <form action="/signin" method="post" class="pt-3" onsubmit="return validateForm()" name="signupForm">
+                    <div class="form-group">
+                        <small class="form-text text-muted text-left pt-3" id="text">username</small>
+                        <input type="text" class="form-control mt-3 pt-3" placeholder="userid" name="username">
+                        
+                    </div>
+                    <div class="form-group">
+                        <small class="form-text text-muted text-left pt-3" id="text">Enter Your email addresss</small>
+                        <input type="email" class="form-control mt-3 pt-3" placeholder="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <small class="form-text text-muted text-left" id="text">Create Password</small>
+                        <input type="password" class="form-control mt-3 pt-3" placeholder="password" name="password">
+                    </div>
+                    <button type="submit" class="btn rounded-pill m-3">submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function validateForm() {
+        var username = document.forms["signupForm"]["username"].value;
+        var email = document.forms["signupForm"]["email"].value;
+        var password = document.forms["signupForm"]["password"].value;
+
+        if (username.trim() === "" ) {
+            alert("username must be filled out");
+            return false;
+        }
+        if (email.trim() === "") {
+            alert("email must be filled out");
+            return false;
+        }
+        if (password.trim() === "") {
+            alert("password must be filled out");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+<%-include('footer')-%>
+ 
